@@ -218,7 +218,69 @@ export class Events extends events.EventEmitter {
     on(event: "error", listener: (err: Error, client: Client) => void): this;
 }
 
-export const types: typeof pgTypes;
+type builtinsTypes = type builtinsTypes =     
+    'BOOL'|
+    'BYTEA'|
+    'CHAR'|
+    'INT8'|
+    'INT2'|
+    'INT4'|
+    'REGPROC'|
+    'TEXT'|
+    'OID'|
+    'TID'|
+    'XID'|
+    'CID'|
+    'JSON'|
+    'XML'|
+    'PG_NODE_TREE'|
+    'SMGR'|
+    'PATH'|
+    'POLYGON'|
+    'CIDR'|
+    'FLOAT4'|
+    'FLOAT8'|
+    'ABSTIME'|
+    'RELTIME'|
+    'TINTERVAL'|
+    'CIRCLE'|
+    'MACADDR8'|
+    'MONEY'|
+    'MACADDR'|
+    'INET'|
+    'ACLITEM'|
+    'BPCHAR'|
+    'VARCHAR'|
+    'DATE'|
+    'TIME'|
+    'TIMESTAMP'|
+    'TIMESTAMPTZ'|
+    'INTERVAL'|
+    'TIMETZ'|
+    'BIT'|
+    'VARBIT'|
+    'NUMERIC'|
+    'REFCURSOR'|
+    'REGPROCEDURE'|
+    'REGOPER'|
+    'REGOPERATOR'|
+    'REGCLASS'|
+    'REGTYPE'|
+    'UUID'|
+    'TXID_SNAPSHOT'|
+    'PG_LSN'|
+    'PG_NDISTINCT'|
+    'PG_DEPENDENCIES'|
+    'TSVECTOR'|
+    'TSQUERY'|
+    'GTSVECTOR'|
+    'REGCONFIG'|
+    'REGDICTIONARY'|
+    'JSONB'|
+    'REGNAMESPACE'|
+    'REGROLE';
+
+export const types: typeof pgTypes & {builtins: {[key in builtinsTypes]: number}};
 
 export const defaults: Defaults & ClientConfig;
 
