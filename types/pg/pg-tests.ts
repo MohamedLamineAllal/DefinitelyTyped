@@ -2,7 +2,7 @@ import { types, Client, QueryArrayConfig, Pool } from "pg";
 
 // https://github.com/brianc/node-pg-types
 // tslint:disable-next-line no-unnecessary-callback-wrapper
-types.setTypeParser(20, val => Number(val));
+types.setTypeParser(types.builtins.INT8, val => Number(val));
 
 const client = new Client({
   host: 'my.database-server.com',
